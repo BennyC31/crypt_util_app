@@ -83,3 +83,9 @@ class TestEncrypt:
         my_dict['PASSWORD'] = encryptor.encrypt_value(string_to_encrypt='myPassW0rd1')
         encryptor.write_to_env_file(filename=file_path,env_dict=my_dict)
         assert os.path.exists(file_path)
+
+    def test_key_init(self):
+        encryptor = EncryptUtil()
+        assert encryptor.get_key() is not None
+        encryptor = EncryptUtil(key='testkey')
+        assert encryptor.get_key() is not None

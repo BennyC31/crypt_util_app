@@ -11,7 +11,10 @@ Used in Python projects.
     * Decryption needs the encryption key, the environment variables to decrypt.
 
 ## Version
-0.1.0
+0.1.5
+
+## Changes (0.1.0 - 0.1.5)
+Modified EncryptUtil init to generate new key if None is passed.
 
 ## Authors
 Benjamin Calderaio, Jr.
@@ -29,7 +32,10 @@ None
 ### Encrypt a password
 encryptor = EncryptUtil()</br>
 value_to_encrypt = 'testpWd'</br>
-key = encryptor.generate_new_key()</br>
+encrypted_value = encryptor.encrypt_value(string_to_encrypt=value_to_encrypt)</br>
+~~key = encryptor.generate_new_key()~~</br>
+**OR**</br>
+key = 'Some_Key'</br>
 encryptor = EncryptUtil(key=key)</br>
 os.environ['TEST_KEY'] = key</br>
 encrypted_value = encryptor.encrypt_value(string_to_encrypt=value_to_encrypt)</br>

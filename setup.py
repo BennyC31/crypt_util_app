@@ -6,7 +6,7 @@ with open('README.md','r') as rfile:
 setuptools.setup(
     include_package_data=True,
     name='encrypt-decrypt-util',
-    version='0.1.0',
+    version='0.1.5',
     description='Utility used for encrypting and decrypting data.',
     long_description=long_description,
     long_description_content_type='text/markdown',

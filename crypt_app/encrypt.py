@@ -4,8 +4,14 @@ import base64
 
 class EncryptUtil:
     def __init__(self,key=None):
-        self.key = key
+        if key is None:
+            self.key = self.generate_new_key()
+        else:
+            self.key = key
 
+    def get_key(self):
+        return self.key
+    
     def generate_new_key(self):
         return Fernet.generate_key()
     
